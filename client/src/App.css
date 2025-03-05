@@ -1,0 +1,663 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+table tr td
+{
+  border:1px solid #c0c0c0;
+}
+.backblue
+{
+  background-color: white;
+  
+  height:1000px;
+}
+.form{
+   /* display: flex;
+  align-items: center;
+  justify-content: center;  */
+  border: solid white;
+}
+.form1{
+margin-left: 400px;
+margin-right: 300px;
+  border:solid #61dafb;
+  width: 400px;
+  height: 300px;
+  background-color: turquoise;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.navi{
+  background-color: #282c34;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 4rem;
+}
+table
+{
+  text-align: left;
+  width: 100%;
+  border:1px solid #c0c0c0
+}
+.table1{
+  text-align: center;
+}
+.table2{
+  text-align: center;
+}
+.newbanner
+{
+  width: 80%;
+  height: 300px;
+}
+table tr td
+{
+  text-align: center;
+  /* border: 1px solid #000000; */
+} 
+.navi a{
+  color: inherit;
+  text-decoration: none;
+}
+.navi ul{
+  padding: 2;
+  margin: 0;
+  /* list-style: none; */
+  display: flex;
+  gap: 2rem;
+  font-size: 2rem;
+}
+.navi li:hover{
+  background-color: grey;
+}
+.input1{
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  margin: 20 px;
+  border-radius: 10 px;
+}
+.from2{
+  font-size: 80px;
+}
+.spikes {
+  position: relative;
+  background: #2c3e50;
+  height: 50vh;
+}
+
+.spikes::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: -0%;
+  top: 100%;
+  z-index: 10;
+  display: block;
+  height: 50px;
+  background-size: 50px 100%;
+  background-image: linear-gradient(135deg, #2c3e50 25%, transparent 25%), linear-gradient(225deg, #2c3e50 25%, transparent 25%);
+  background-position: 0 0;
+}
+figcaption{
+  position: absolute;
+  bottom: 2rem;
+  margin: 0 2rem;
+  font-size: 1.5em;
+  color: white;
+}
+.position-relative{
+  width: 10%;
+  height: 300px;
+}
+.p1{
+  font-size: 18px;
+}
+.imgclass{
+  width: 100%;
+}
+
+
+.about-us {
+  /* background: linear-gradient(to right, #e0f7fa, #b9fbc0); */
+  background-color:  #f0f8ff ;
+  padding: 4rem 0;
+}
+
+.jumbotron {
+  background: #007bff;
+  color: white;
+  padding: 2rem;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.carousel-image {
+  height: 400px;
+  object-fit: cover;
+}
+
+.course-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.course-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.feature-box {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-image {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.feature-list li {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gradient background */
+  padding: 20px;
+}
+
+.login-background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  margin-bottom: 1rem;
+}
+
+.login-logo {
+  width: 150px;
+  height: auto;
+}
+
+.login-page h2 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.login-page .text-muted {
+  color: #666;
+}
+
+.login-page .form-control {
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+.login-page .btn-primary {
+  border-radius: 0.5rem;
+  background-color: #007bff; /* Vibrant button color */
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.login-page .btn-primary:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.login-page a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-page a:hover {
+  color: #0056b3; /* Darker shade on hover */
+}
+
+  .card-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-link-hover:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffcc00;
+    left: 0;
+    bottom: -4px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+  }
+  
+  .nav-link-hover:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .book-button-hover:hover {
+    background-color: #0033cc;
+    color: #ffcc00;
+    box-shadow: 0 8px 20px rgba(0, 51, 204, 0.7);
+  }
+  
+  .footer {
+    background-color: #23272b; /* Darker background for contrast */
+    color: #ffffff; /* White text for better readability */
+  }
+  
+  h5 {
+    margin-bottom: 15px; /* Spacing between heading and content */
+    font-weight: 600; /* Make the heading bold */
+  }
+  
+  .icon {
+    margin-right: 10px;
+    color: #007bff; /* Icon color */
+  }
+  
+  .social-icons {
+    font-size: 1.5rem; /* Increase icon size for visibility */
+  }
+  
+  .subscribe {
+    display: flex; /* Use flexbox for input and button alignment */
+    margin-top: 10px; /* Spacing above the subscribe section */
+  }
+  
+  .email-input {
+    padding: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: none;
+    flex-grow: 1; /* Allow input to take remaining space */
+  }
+  
+  .subscribe-button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #007bff; /* Button color */
+    color: #ffffff; /* Button text color */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .subscribe-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .text-white a {
+    transition: color 0.3s; /* Smooth transition for link hover effect */
+  }
+  
+  .text-white a:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  .service-card {
+    border: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+  }
+  
+  .testimonial-card {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial-image {
+    border-radius: 50%;
+    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #007bff;
+  }
+  
+  .testimonial-quote {
+    font-style: italic;
+    font-size: 1.2rem;
+  }
+  
+  .testimonial-author {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .car-about-us-section {
+    padding: 60px 0;
+    background-color: #f8fafc;
+  }
+  
+  .custom-card, .custom-product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .custom-card:hover, .custom-product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .product-image {
+    transition: transform 0.3s ease;
+  }
+  
+  .product-image:hover {
+    transform: scale(1.1);
+  }
+  
+
+  .mission-slider .carousel-item {
+    max-height: 400px; /* Limits the carousel height */
+  }
+  
+  .mission-image {
+    max-height: 400px; /* Restricts each image height */
+    object-fit: cover; /* Ensures images fill the space without distortion */
+  }
+  
+  .mission-caption {
+    background: rgba(0, 0, 0, 0.6); /* semi-transparent background for better readability */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .mission-caption h4 {
+    font-size: 1.5rem;
+  }
+  
+  .mission-caption p {
+    font-size: 1rem;
+  }
+  
+
+  .custom-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .custom-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .custom-image {
+    max-width: 250px;
+    max-height: 180px;
+    border-radius: 15px;
+  }
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Custom animation on scroll */
+  @media (min-width: 768px) {
+    .reveal {
+      animation: fadeInUp 0.6s forwards;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .reveal-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .reveal-text.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  .page-header {
+    position: relative;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #dcdcdc 0%, #b0b0b0 100%);
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .header-content h1,
+  .header-content h3 {
+    animation: fadeInDown 1s ease-out;
+    margin-bottom: 1rem;
+  }
+  
+  .header-content p {
+    animation: fadeInUp 1.2s ease-out;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Card Hover Effect */
+.card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.service-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.service-card.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  /* CSS for responsiveness */
+.custom-card, .custom-product-card {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 20px;
+  }
+
+  .custom-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .custom-card .reveal-text,
+  .custom-card .custom-image {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+/* About Us Page Enhancements */
+.car-about-us-section .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.car-about-us-section .reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mission-slider .carousel-item img {
+  border-radius: 10px;
+}
+
+.mission-slider .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 8px;
+}
+/* Hover effect for the cards */
+.hoverable-card:hover {
+  transform: scale(1.03);  /* Slightly increase the card size */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);  /* Enhance shadow effect */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;  /* Smooth transition */
+}
+
+/* Optional: Add spacing between rows */
+.row {
+  margin-bottom: 20px;
+}
+
+
+
+
+  
+  
+  
+  
+  
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

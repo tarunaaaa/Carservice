@@ -1,0 +1,229 @@
+/* Core Values Section Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Image Styling for Rounded Corners and Shadow */
+  .reveal img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card Styling */
+  .reveal .card {
+    background-color: #f9f9f9;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reveal h5 {
+    font-weight: bold;
+  }
+  
+  .reveal p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .core-value-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+  }
+  
+  .core-value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .reveal {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(20px);
+  }
+  
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Image Hover Effects */
+.core-value-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .core-value-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card Styling */
+  .core-value-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+  .core-value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Core Values Title */
+  .core-value-title {
+    font-size: 1.4em;
+    color: #ff6347; /* Custom color for primary brand aesthetic */
+  }
+  
+  /* Text Styling */
+  .core-value-text {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Reveal Animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Initial Hidden State for Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  /* Show Class Applied When Element is in Viewport */
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Core Value Image Hover Effects */
+  .core-value-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .core-value-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card Styling */
+  .core-value-card {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .core-value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  }
+ /* General Styling for About Us Header */
+.about-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .about-title {
+    color: #ff6347;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .about-title:hover {
+    color: #d35400;
+    transform: scale(1.05);
+  }
+  
+  .about-text {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-style: italic;
+  }
+  
+  .about-text .highlight {
+    font-weight: bold;
+    color: #ff6347;
+  }
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Animation to Fade-in and Up */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Center alignment and styling for product images */
+.product-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-image:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-card {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .product-card h5 {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  
+  .product-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+  }
+  
+  /* Hover effect for product cards */
+.product-card {
+    transition: all 0.3s ease; /* Smooth transition */
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+    background-color: #f8f9fa; /* Optional: Change background color on hover */
+  }
+  

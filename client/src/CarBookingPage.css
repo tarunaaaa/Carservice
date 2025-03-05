@@ -1,0 +1,100 @@
+/* Booking Page Background */
+.booking-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('https://img.freepik.com/free-photo/business-men-work-with-laptops-side-car_1359-1185.jpg?t=st=1734324230~exp=1734327830~hmac=65f5a9bf1daa5c55aa9c0cafaebbf6d99c4d20753d43fb57e2999edf309a84a5&w=900');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Booking Form Container */
+.booking-container {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Headers */
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+h4 {
+  font-weight: 600;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+/* Form Styling */
+label {
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Inputs and Select */
+.form-control, .form-select {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Input Focus */
+.form-control:focus, .form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.6);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Checkboxes */
+.form-check-label {
+  color: #fff;
+}
+
+/* Button Styling */
+button {
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #0056b3, #004080);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .booking-container {
+      max-width: 90%;
+      padding: 20px;
+  }
+
+  h1 {
+      font-size: 28px;
+  }
+}
