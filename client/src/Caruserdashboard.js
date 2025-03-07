@@ -75,22 +75,23 @@ const Caruserdashboard = () => {
 
   // Handle edit profile
   const handleEditProfile = () => {
-    if (!user || !user._id) {
-        console.error("User ID is missing!");
-        return;
-    }
+    if (!user || !(user._id || user.id)) {
+      console.error("User data is missing or incomplete!", user);
+      alert("User data is missing. Please log in again.");
+      return;
+  }
 
     // Prepare the updated user data
     const updatedData = {
-        id: user._id, // Ensure the correct user ID is sent
-        name: updatedUser.name,
-        email: updatedUser.email,
-        mobile: updatedUser.mobile,
-        password: updatedUser.password,
-        age: updatedUser.age,
-    };
+      id: user._id || user.id, // Ensure correct ID is sent
+      name: updatedUser.name,
+      email: updatedUser.email,
+      mobile: updatedUser.mobile,
+      password: updatedUser.password,
+      age: updatedUser.age,
+  };
 
-    console.log("Sending Update Request:", updatedData); // Debugging
+    console.log("Sending Update Request:", updatedData);
 
     fetch("http://localhost:8080/updateuser", {
         method: "PUT",
@@ -102,12 +103,12 @@ const Caruserdashboard = () => {
         .then((response) => response.json())
         .then((data) => {
             if (data.status === 200) {
-                setUser(updatedUser); // Update the user state with the new data
-                localStorage.setItem("userEmail", updatedUser.email); // Update email in local storage if changed
-                setOpenEditDialog(false); // Close the dialog
+                setUser(updatedUser);
+                localStorage.setItem("user", JSON.stringify(updatedUser)); // Save updated user data
+                setOpenEditDialog(false);
                 alert("Profile updated successfully!");
             } else {
-                console.error("Failed to update profile:", data.message);
+                console.error("Failed to update profile:", data.error);
                 alert("Failed to update profile. Please try again.");
             }
         })
@@ -116,6 +117,7 @@ const Caruserdashboard = () => {
             alert("An error occurred. Please try again.");
         });
 };
+
   // Handle add booking
   const handleAddBooking = () => {
     alert("Add Booking functionality coming soon!");
