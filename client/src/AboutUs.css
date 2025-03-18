@@ -1,0 +1,66 @@
+ /* AboutUs.css */
+.hero-section {
+    width: 1270px;
+    background: linear-gradient(135deg, #000428, #004e92);
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-image-container {
+    position: relative;
+    padding: 20px;
+  }
+  
+  .hero-image-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: rgba(255, 193, 7, 0.2);
+    border-radius: 15px;
+    z-index: -1;
+  }
+  
+  .hover-scale {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .hover-scale:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .badge {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+  }
+  
+  .btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #fff;
+    color: #004e92;
+    transform: scale(1.05);
+  }

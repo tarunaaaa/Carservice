@@ -1,8 +1,79 @@
-import React from 'react';
-import { Container, Row, Col, Form, Button, Card, ListGroup } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Row, Col, Form, Button, Card, ListGroup, Alert } from 'react-bootstrap';
+import axios from 'axios';
 import CarFooter from './Carfooter';
 
 function Carcontactus() {
+  // State for form inputs
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  // State for API response
+  const [response, setResponse] = useState({
+    success: false,
+    message: '',
+  });
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent page refresh
+
+    // Validate form inputs
+    if (!formData.name || !formData.email || !formData.message) {
+      setResponse({
+        success: false,
+        message: 'All fields are required!',
+      });
+      return;
+    }
+
+    try {
+      console.log('Sending form data:', formData); // Debugging: Log form data
+
+      // Send POST request to the API
+      const res = await axios.post('http://localhost:8080/usercontactus', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      console.log('API response:', res.data); // Debugging: Log API response
+
+      // Handle success response
+      setResponse({
+        success: true,
+        message: res.data.message || 'Thank you for contacting us! We will get back to you shortly.',
+      });
+
+      // Clear the form
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('API error:', error); // Debugging: Log API error
+
+      // Handle error response
+      setResponse({
+        success: false,
+        message: error.response?.data?.error || 'Failed to send message. Please try again later.',
+      });
+    }
+  };
+
   return (
     <div>
       <Container fluid className="p-5" style={{ backgroundColor: '#f0f8ff' }}>
@@ -21,25 +92,59 @@ function Carcontactus() {
           <Col md={6} className="mb-4">
             <h2 style={{ color: '#007bff', fontWeight: 'bold', marginBottom: '20px' }}>Get in Touch</h2>
             <p style={{ marginBottom: '30px' }}>Fill out the form below, and we'll get back to you as soon as possible.</p>
-            <Form>
+
+            {/* Display success/error message */}
+            {response.message && (
+              <Alert variant={response.success ? 'success' : 'danger'}>
+                {response.message}
+              </Alert>
+            )}
+
+            <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formName" className="mb-3">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter your name" />
+                <Form.Control
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
               </Form.Group>
               <Form.Group controlId="formEmail" className="mb-3">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter your email" />
+                <Form.Control
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
               </Form.Group>
               <Form.Group controlId="formMessage" className="mb-3">
                 <Form.Label>Message</Form.Label>
-                <Form.Control as="textarea" rows={3} placeholder="Enter your message" />
+                <Form.Control
+                  as="textarea"
+                  name="message"
+                  rows={3}
+                  placeholder="Enter your message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                />
               </Form.Group>
-              <Button variant="primary" type="submit" style={{ backgroundColor: '#007bff', borderColor: '#007bff', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}>
+              <Button
+                variant="primary"
+                type="submit"
+                style={{ backgroundColor: '#007bff', borderColor: '#007bff', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}
+              >
                 Send Message
               </Button>
             </Form>
           </Col>
-          
+
           <Col md={6} className="mb-4">
             <Card className="shadow-lg card-hover" style={{ border: 'none' }}>
               <iframe

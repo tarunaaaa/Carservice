@@ -1,0 +1,25 @@
+.dashboard-card {
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  
+  .queries-table {
+    margin-top: 20px;
+  }
+  
+  .queries-table thead {
+    background-color: #f8f9fa;
+  }
+  
+  .queries-table th,
+  .queries-table td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .queries-table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }

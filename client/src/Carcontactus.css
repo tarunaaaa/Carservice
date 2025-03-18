@@ -1,0 +1,170 @@
+/* Carcontactus.css */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #000428, #004e92);
+    padding: 100px 0;
+    color: white;
+  }
+  
+  .hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-section img {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Contact Form & Info Section */
+  .contact-form-section {
+    padding: 80px 0;
+  }
+  
+  .contact-form-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-form-section .form-control {
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-form-section .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .contact-form-section .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .contact-info-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-info-card h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-info-card .list-group-item {
+    border: none;
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+  
+  .contact-info-card .list-group-item svg {
+    margin-right: 12px;
+  }
+  
+  /* Google Map */
+  .google-map {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 2rem;
+  }
+  
+  /* Social Media Section */
+  .social-media-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .social-media-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .social-media-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .social-media-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .social-media-card svg {
+    margin-bottom: 1rem;
+  }
+  
+  /* Testimonials Section */
+  .testimonials-section {
+    padding: 80px 0;
+  }
+  
+  .testimonials-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .testimonial-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .testimonial-card p {
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-card h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .faq-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  .faq-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .faq-card h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .faq-card p {
+    font-size: 1rem;
+  }
+  

@@ -5,6 +5,7 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import { FaHome, FaCar, FaInfoCircle, FaEnvelope, FaClipboardList, FaUserShield, FaUser, FaUserPlus } from 'react-icons/fa';
 import Carhome from './Carhome';
 import Caraboutus1 from './Caraboutus1';
+import Aboutusbackup from './Aboutusbackup'
 import Carcontactus from './Carcontactus';
 import Carservice from './Carservice';
 import Carbooking from './Carbooking';
@@ -14,7 +15,8 @@ import Caruserlogin from './Caruserlogin';
 import CarUserSignup from './Carusersignup';
 import CarBookingPage from './CarBookingPage';
 import Caruserdashboard from './Caruserdashboard';
-
+import Caradminlogin from './Caradminlogin'
+import Contactusbackup from './Contactusbackup'
 function Maincar() {
   return (
     <div>
@@ -28,7 +30,7 @@ function Maincar() {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mx-auto" style={navContainerStyle}>
                 <Nav.Link as={Link} to="/washservice" style={linkStyle} className="nav-hover">
-                  <FaCar style={iconStyle} /> Wash Services
+                  <FaCar style={iconStyle} /> Car Services
                 </Nav.Link>
                 <Nav.Link as={Link} to="/aboutus" style={linkStyle} className="nav-hover">
                   <FaInfoCircle style={iconStyle} /> About Us
@@ -47,7 +49,7 @@ function Maincar() {
                 <Button as={Link} to="/carbooking" style={iconButtonStyle} className="icon-hover">
                   <FaClipboardList />
                 </Button>
-                <Button as={Link} to="/login" style={iconButtonStyle} className="icon-hover">
+                <Button as={Link} to="/adminlogin" style={iconButtonStyle} className="icon-hover">
                   <FaUserShield />
                 </Button>
               </div>
@@ -57,8 +59,9 @@ function Maincar() {
         <Routes>
           <Route path="/" element={<Carhome />} />
           <Route path="/home" element={<Carhome />} />
-          <Route path="/aboutus" element={<Caraboutus1 />} />
-          <Route path="/contactus" element={<Carcontactus />} />
+          <Route path="/aboutus" element={<Aboutusbackup />} />
+          {/* <Route path="/contactus" element={<Carcontactus />} /> */}
+          <Route path="/contactus" element={<Contactusbackup />} />
           <Route path="/washservice" element={<Carservice />} />
           {/* <Route path="/booking" element={<Carbooking />} /> */}
           <Route path="/dashboard" element={<CarDashboard />} />
@@ -67,6 +70,7 @@ function Maincar() {
           <Route path="/usersignup" element={<CarUserSignup/>} />
           <Route path="/carbooking" element={<CarBookingPage/>} />
           <Route path="/userdashboard" element={<Caruserdashboard/>} />
+          <Route path="/adminlogin" element={<Caradminlogin/>} />
         </Routes>
       </BrowserRouter>
 

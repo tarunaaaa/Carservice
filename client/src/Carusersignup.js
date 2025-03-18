@@ -251,5 +251,12 @@ const SignupForm = () => {
     </Container>
   );
 };
-
-export default SignupForm;
+const carsignup = ()=>{
+  return(
+    <div>
+      <SignupForm />
+      <CarFooter />
+    </div>
+  )
+}
+export default carsignup;

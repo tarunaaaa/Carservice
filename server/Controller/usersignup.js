@@ -224,5 +224,47 @@ const loginUser = async (req, res) => {
         });
     }
 };
+//delete user
+const deleteuser = async (req, res) => {
+    try {
+        const db = await databasefile.main();
+        const collection = db.collection('usersignup');
 
-module.exports = { insertdata, getuserdata, getUserByEmail, loginUser , updateUserProfile  };
+        // Extract the email from the request parameters or body
+        const userEmail = req.params.email; // Assuming the email is passed as a URL parameter
+
+        // Check if the email is provided
+        if (!userEmail) {
+            return res.status(400).json({
+                status: 400,
+                error: 'User email is required',
+            });
+        }
+
+        // Delete the user with the given email
+        const deleteResult = await collection.deleteOne({ email: userEmail });
+
+        // Check if the user was found and deleted
+        if (deleteResult.deletedCount === 0) {
+            return res.status(404).json({
+                status: 404,
+                error: 'User not found',
+            });
+        }
+
+        // Return success response
+        res.status(200).json({
+            status: 200,
+            message: 'User deleted successfully',
+            data: deleteResult,
+        });
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        res.status(500).json({
+            status: 500,
+            error: 'Internal Server Error',
+        });
+    }
+};
+
+module.exports = { insertdata, getuserdata, getUserByEmail, loginUser , updateUserProfile  , deleteuser};

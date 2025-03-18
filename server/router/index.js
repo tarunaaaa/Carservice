@@ -20,4 +20,16 @@ router.get('/getuserdata',Cusersignup.getUserByEmail)
 router.get('/getuserbooking',Ccarbooking.getBookingByEmail)
 //api for updating the profile of the user
 router.put('/updateuser',Cusersignup.updateUserProfile)
+//api for contact us page 
+router.post('/usercontactus', Ccarbooking.contactUs)
+//api to get all user data in admin panel
+router.get('/getalluserdata',Cusersignup.getuserdata)
+//api to delete user in admin panel
+router.delete('/deleteuser/:email',Cusersignup.deleteuser)
+//api to get all booking details in admin pannel
+router.get('/getallbooking',Ccarbooking.getAllBookings)
+//api to get contact us details
+router.get('/getcontact',Ccarbooking.getAllContactSubmissions)
+//api for booking slot timing 
+// router.get('/getbookslot',Ccarbooking.getBookedSlots)
 module.exports=router
