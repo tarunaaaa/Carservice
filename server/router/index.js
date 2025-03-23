@@ -4,7 +4,7 @@ const Ccarwash=require('../controller/carsignup');
 const Ccarlogin=require('../controller/carlogin');
 const Cusersignup = require('../Controller/usersignup')
 const Ccarbooking=require('../Controller/userbooking')
-
+const booking = require('../Controller/booking')
 //post api for car sign up page
 router.get('/getcarsignup',Ccarwash.getuserdata)
 router.post('/carsignup',Ccarwash.insertdata)
@@ -32,4 +32,6 @@ router.get('/getallbooking',Ccarbooking.getAllBookings)
 router.get('/getcontact',Ccarbooking.getAllContactSubmissions)
 //api for booking slot timing 
 // router.get('/getbookslot',Ccarbooking.getBookedSlots)
+// api for car brand
+router.post('/carbrand',booking.addCarBrandAndType)
 module.exports=router

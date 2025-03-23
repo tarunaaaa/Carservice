@@ -17,6 +17,7 @@ import CarBookingPage from './CarBookingPage';
 import Caruserdashboard from './Caruserdashboard';
 import Caradminlogin from './Caradminlogin'
 import Contactusbackup from './Contactusbackup'
+import Newbooking from './Newbooking'
 function Maincar() {
   return (
     <div>
@@ -68,7 +69,8 @@ function Maincar() {
           <Route path="/admindashboard" element={<CarAdminDashboard />} />
           <Route path="/userlogin" element={<Caruserlogin />} />
           <Route path="/usersignup" element={<CarUserSignup/>} />
-          <Route path="/carbooking" element={<CarBookingPage/>} />
+          {/* <Route path="/carbooking" element={<CarBookingPage/>} /> */}
+          <Route path="/carbooking" element={<Newbooking/>} />
           <Route path="/userdashboard" element={<Caruserdashboard/>} />
           <Route path="/adminlogin" element={<Caradminlogin/>} />
         </Routes>

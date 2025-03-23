@@ -5,6 +5,7 @@ import SignupForm from './Signupform';
 import CarBookingPage from './CarBookingPage';
 import Caruserdashboard from './Caruserdashboard'
 import Aboutusbackup from './Aboutusbackup'
+import Newbooking from './Newbooking'
 function App() {
   return (
     <div >
@@ -13,6 +14,7 @@ function App() {
 {/* <CarBookingPage /> */}
 {/* <Caruserdashboard/> */}
 {/* <Aboutusbackup /> */}
+{/* <Newbooking /> */}
     </div>
   );
 }
