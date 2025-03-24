@@ -1,15 +1,15 @@
 const express=require('express');
 const router=express.Router();
-const Ccarwash=require('../controller/carsignup');
-const Ccarlogin=require('../controller/carlogin');
+// const Ccarwash=require('../controller/carsignup');
+// const Ccarlogin=require('../controller/carlogin');
 const Cusersignup = require('../Controller/usersignup')
 const Ccarbooking=require('../Controller/userbooking')
 const booking = require('../Controller/booking')
 //post api for car sign up page
-router.get('/getcarsignup',Ccarwash.getuserdata)
-router.post('/carsignup',Ccarwash.insertdata)
+// router.get('/getcarsignup',Ccarwash.getuserdata)
+// router.post('/carsignup',Ccarwash.insertdata)
 //post api for car login page
-router.post('/carlogin',Ccarlogin.insertuserdata)
+// router.post('/carlogin',Ccarlogin.insertuserdata)
 router.post('/getusersignup',Cusersignup.insertdata)
 router.post('/getuserlogin',Cusersignup.loginUser)
 //car booking apis
