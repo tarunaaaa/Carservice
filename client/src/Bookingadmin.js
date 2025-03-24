@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Table, Spinner, Alert, Button } from 'react-bootstrap';
-import { FaIdCard, FaUser, FaEnvelope, FaCar, FaWrench, FaClock, FaStickyNote, FaCalendarAlt, FaTrash } from 'react-icons/fa'; // Import icons
-
+import { FaIdCard, FaUser, FaEnvelope, FaCar, FaWrench, FaClock, FaStickyNote, FaCalendarAlt, FaTrash } from 'react-icons/fa'; 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  // Fetch bookings from the API
   useEffect(() => {
     fetch('http://localhost:8080/getallbooking')
       .then((response) => {

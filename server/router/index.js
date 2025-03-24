@@ -1,8 +1,13 @@
 const express=require('express');
 const router=express.Router();
+
 // const Ccarwash=require('../controller/carsignup');
 // const Ccarlogin=require('../controller/carlogin');
 const Cusersignup = require('../Controller/usersignup')
+// const Ccarwash=require('../controller/carsignup');
+// const Ccarlogin=require('../controller/carlogin');
+// const Cusersignup = require('../Controller/usersignup')
+
 const Ccarbooking=require('../Controller/userbooking')
 const booking = require('../Controller/booking')
 //post api for car sign up page
@@ -12,6 +17,11 @@ const booking = require('../Controller/booking')
 // router.post('/carlogin',Ccarlogin.insertuserdata)
 router.post('/getusersignup',Cusersignup.insertdata)
 router.post('/getuserlogin',Cusersignup.loginUser)
+
+// router.post('/carlogin',Ccarlogin.insertuserdata)
+// router.post('/getusersignup',Cusersignup.insertdata)
+// router.post('/getuserlogin',Cusersignup.loginUser)
+
 //car booking apis
 router.post('/insertbooking',Ccarbooking.bookCarService)
 //api for user profile edit
@@ -22,7 +32,7 @@ router.get('/getuserbooking',Ccarbooking.getBookingByEmail)
 router.put('/updateuser',Cusersignup.updateUserProfile)
 //api for contact us page 
 router.post('/usercontactus', Ccarbooking.contactUs)
-//api to get all user data in admin panel
+// api to get all user data in admin panel
 router.get('/getalluserdata',Cusersignup.getuserdata)
 //api to delete user in admin panel
 router.delete('/deleteuser/:email',Cusersignup.deleteuser)

@@ -10,7 +10,6 @@ const AdminLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
   const handleLogin = (e) => {
     e.preventDefault();
     if (username === "taruna" && password === "123456") {
