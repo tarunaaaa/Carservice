@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram>
+    <elements>
+        <element id="1" type="actor" label="USER" x="50" y="100" width="100" height="50"/>
+        <element id="2" type="process" label="VIEW\nInteracting with View" x="200" y="100" width="150" height="70"/>
+        <element id="3" type="process" label="CONTROLLER\nRendering the Content" x="400" y="100" width="180" height="70"/>
+        <element id="4" type="process" label="MODEL\nRequesting & Returning Data" x="650" y="100" width="200" height="70"/>
+        <element id="5" type="data" label="DATABASE\nResponse Data" x="900" y="100" width="150" height="70"/>
+    </elements>
+    <connections>
+        <connection from="1" to="2" label="User Interaction"/>
+        <connection from="2" to="3" label="Sending Request"/>
+        <connection from="3" to="4" label="Processing Data"/>
+        <connection from="4" to="5" label="Fetching from DB"/>
+        <connection from="5" to="4" label="Returning Data"/>
+        <connection from="4" to="3" label="Processing Response"/>
+        <connection from="3" to="2" label="Rendering View"/>
+    </connections>
+</diagram>
