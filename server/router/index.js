@@ -15,17 +15,17 @@ router.post('/carlogin',Ccarlogin.insertuserdata)
 //car booking apis
 router.post('/insertbooking',Ccarbooking.bookCarService)
 //api for user profile edit
-// router.get('/getuserdata',Cusersignup.getUserByEmail)
+router.get('/getuserdata',Cusersignup.getUserByEmail)
 //api for showing booking details to user
 router.get('/getuserbooking',Ccarbooking.getBookingByEmail)
 //api for updating the profile of the user
-// router.put('/updateuser',Cusersignup.updateUserProfile)
+router.put('/updateuser',Cusersignup.updateUserProfile)
 //api for contact us page 
 router.post('/usercontactus', Ccarbooking.contactUs)
-//api to get all user data in admin panel
-// router.get('/getalluserdata',Cusersignup.getuserdata)
+// api to get all user data in admin panel
+router.get('/getalluserdata',Cusersignup.getuserdata)
 //api to delete user in admin panel
-// router.delete('/deleteuser/:email',Cusersignup.deleteuser)
+router.delete('/deleteuser/:email',Cusersignup.deleteuser)
 //api to get all booking details in admin pannel
 router.get('/getallbooking',Ccarbooking.getAllBookings)
 //api to get contact us details
