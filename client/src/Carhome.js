@@ -37,7 +37,7 @@ function Carhome() {
       }}>
         <h1 style={{ fontSize: '3rem', fontWeight: 'bold' }}>Get Your Car Cleaned Right!</h1>
         <p style={{ fontSize: '1.5rem', margin: '20px 0' }}>Professional and Affordable Car Wash Services</p>
-        <Link to='/booking'>
+        <Link to='/carbooking'>
         <Button variant="light" size="lg">Book Now</Button>
         </Link>
       </section>

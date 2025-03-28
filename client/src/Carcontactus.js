@@ -43,7 +43,7 @@ function Carcontactus() {
       console.log('Sending form data:', formData); // Debugging: Log form data
 
       // Send POST request to the API
-      const res = await axios.post('http://localhost:8080/usercontactus', formData, {
+      const res = await axios.post('carservice-production-86c5.up.railway.app/usercontactus', formData, {
         headers: {
           'Content-Type': 'application/json',
         },

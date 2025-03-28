@@ -1,5 +1,5 @@
 // AboutUs.js
-import React, { useEffect } from 'react';
+import React, { useEffect ,useRef} from 'react';
 import { Container, Row, Col, Card, Button, Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AOS from 'aos';
@@ -9,7 +9,9 @@ import { Wrench, Users, Settings, Award, Car, Star,Quote ,Flag,Facebook,Linkedin
 import { CheckCircle, PhoneCall } from "lucide-react";
 import { motion } from "framer-motion";
 import CarFooter from './Carfooter';
+import { Link } from 'react-router-dom';
 const AboutUs = () => {
+  const coreValuesRef = useRef(null);
   const teamMembers = [
     {
       name: "John Doe",
@@ -94,10 +96,12 @@ const AboutUs = () => {
               </p>
               {/* Buttons */}
               <div>
+                <Link to="/contactus">
                 <Button variant="warning" size="lg" className="me-3">
                   <PhoneCall size={18} className="me-2" /> Contact Us
-                </Button>
-                <Button variant="outline-light" size="lg">
+                </Button></Link>
+                <Button variant="outline-light" size="lg"   
+                onClick={() => coreValuesRef.current.scrollIntoView({ behavior: 'smooth' })}>
                   Learn More
                 </Button>
               </div>
@@ -195,7 +199,7 @@ const AboutUs = () => {
     </section>
       {/* Mission & Values */}
        {/* Core Values Section */}
-       <section
+       <section  ref={coreValuesRef}
         style={{
           background: "linear-gradient(135deg, #007bff, #0056b3)",
           color: "#fff",
@@ -408,7 +412,9 @@ const AboutUs = () => {
     </p>
 
     {/* Motion button for an interactive experience */}
+
     <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.3 }}>
+      <Link to="/carbooking">
       <Button
         variant="dark"
         size="lg"
@@ -422,7 +428,7 @@ const AboutUs = () => {
         }}
       >
         Book Now 🚗
-      </Button>
+      </Button> </Link>
     </motion.div>
   </Container>
 </section>

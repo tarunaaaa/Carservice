@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,useRef } from 'react';
 import { Container, Row, Col, Form, Button, Card, ListGroup, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import { motion } from 'framer-motion';
@@ -9,6 +9,7 @@ import './Carcontactus.css'; // Import the CSS file
 import CarFooter from './Carfooter';
 
 function Carcontactus() {
+  const testimonialsRef = useRef(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -98,7 +99,7 @@ function Carcontactus() {
                 <p className="lead mb-4">
                   We are here to assist you with all your car service needs. Reach out to us through any of the methods below.
                 </p>
-                <Button variant="warning" size="lg" className="rounded-pill px-4">
+                <Button variant="warning" size="lg" className="rounded-pill px-4" onClick={() => testimonialsRef.current.scrollIntoView({ behavior: 'smooth' })}>
                   Learn More <ChevronRight size={20} />
                 </Button>
               </motion.div>
@@ -265,7 +266,7 @@ function Carcontactus() {
 
 
       {/* Testimonials Section */}
-      <section className="py-5">
+      <section  ref={testimonialsRef} className="py-5">
         <Container>
           <h2 className="text-center mb-5 fw-bold text-primary">What Our Customers Say</h2>
           <Row className="g-4">

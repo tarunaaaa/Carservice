@@ -3,7 +3,7 @@ import { Form, Button, Card, Container, InputGroup, Row, Col } from "react-boots
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaUser, FaLock, FaKey } from "react-icons/fa";
 import "./AdminLogin.css"; // Custom styles for the theme
-
+import CarFooter from "./Carfooter";
 import { useNavigate } from 'react-router-dom';
 const AdminLogin = () => {
     const navigate = useNavigate();
@@ -97,5 +97,13 @@ const AdminLogin = () => {
     </Container>
   );
 };
+const Login = ()=>{
+  return(
+    <div>
+      <AdminLogin />
+      <CarFooter />
+    </div>
+  )
+}
 
-export default AdminLogin;
+export default Login;

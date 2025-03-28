@@ -38,7 +38,7 @@ const Caruserdashboard = () => {
   // Fetch user data
   useEffect(() => {
     if (userEmail) {
-      fetch(`http://localhost:8080/getuserdata?email=${userEmail}`)
+      fetch(`carservice-production-86c5.up.railway.app/getuserdata?email=${userEmail}`)
         .then((response) => response.json())
         .then((data) => {
           if (data.status === 200 && data.user) {
@@ -55,7 +55,7 @@ const Caruserdashboard = () => {
   // Fetch user bookings
   useEffect(() => {
     if (userEmail) {
-      fetch(`http://localhost:8080/getuserbooking?email=${userEmail}`)
+      fetch(`carservice-production-86c5.up.railway.app/getuserbooking?email=${userEmail}`)
         .then((response) => response.json())
         .then((data) => {
           if (data.status === 200 && data.bookings) {
@@ -93,7 +93,7 @@ const Caruserdashboard = () => {
 
     console.log("Sending Update Request:", updatedData);
 
-    fetch("http://localhost:8080/updateuser", {
+    fetch("carservice-production-86c5.up.railway.app/updateuser", {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",

@@ -25,7 +25,7 @@ const SignupForm = () => {
     console.log("Sending Data:", JSON.stringify(formData));
 
     try {
-      const response = await fetch("http://localhost:8080/getusersignup", {
+      const response = await fetch("carservice-production-86c5.up.railway.app/getusersignup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

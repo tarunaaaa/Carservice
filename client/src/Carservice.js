@@ -17,7 +17,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
-import './AboutUs.css'; // Import the same CSS file
+import './AboutUs.css'; // Import the same CSS fil
+import { Link } from 'react-router-dom';
 
 const CarService = () => {
   useEffect(() => {
@@ -47,9 +48,10 @@ const CarService = () => {
                 <p className="lead mb-4">
                   Explore a variety of premium car services designed to suit every need—from basic care to deep cleaning, maintenance, and protective coatings.
                 </p>
+                <Link to ="/carbooking">
                 <Button variant="warning" size="lg">
                   Book Now
-                </Button>
+                </Button></Link>
               </motion.div>
             </Col>
             <Col lg={6} className="text-center">
@@ -96,8 +98,10 @@ const CarService = () => {
                       <h3 className="text-primary fw-bold mb-3">{service.title}</h3>
                       <p className="text-muted mb-3">{service.description}</p>
                       <p className="text-muted small mb-3">{service.details}</p>
-                      <p className="fw-bold text-dark">Price: {service.price}</p>
+                      <p className="fw-bold text-dark">  {service.price}</p>
+                      <Link to ="/carbooking">
                       <Button variant="warning">Book Now</Button>
+                      </Link>
                     </Card.Body>
                   </Card>
                 </motion.div>
@@ -119,9 +123,11 @@ const CarService = () => {
         <Container>
           <h2 className="fw-bold mb-4">Ready to Book Your Service?</h2>
           <p className="lead mb-4">Experience premium car care with our award-winning team.</p>
+          <Link to="/carbooking">
           <Button variant="dark" size="lg">
             Schedule Now
           </Button>
+          </Link>
         </Container>
       </section>
 
@@ -131,18 +137,18 @@ const CarService = () => {
 };
 
 const services = [
-  { title: 'Silver Wash', description: 'A quick, effective wash.', details: 'Basic exterior wash.', price: '$15', image: carwash1 },
-  { title: 'Gold Wash', description: 'Includes exterior wash and wheel cleaning.', details: 'Regular maintenance wash.', price: '$25', image: carwash2 },
-  { title: 'Platinum Wash', description: 'Full detailing and polish.', details: 'Comprehensive interior and exterior clean.', price: '$40', image: carwash3 },
-  { title: 'Intensive Internal Cleaning', description: 'Deep clean of interior.', details: 'Seats, mats, and interior surfaces.', price: '$30', image: carwash4 },
-  { title: 'Wax Rubbing and Buffing', description: 'Protective wax application.', details: 'Enhances shine and preserves paint.', price: '$35', image: carwash5 },
-  { title: 'Teflon Coating', description: 'Long-lasting paint protection.', details: 'Resistant to dirt and scratches.', price: '$50', image: carwash6 },
-  { title: 'Oil Change', description: 'Regular oil and filter change.', details: 'Keeps your engine running smoothly.', price: '$40', image: oilchange },
-  { title: 'Tire Service', description: 'Tire rotation and balancing.', details: 'Ensures even tire wear and smooth ride.', price: '$30', image: tireservice },
-  { title: 'Brake Service', description: 'Brake inspection and maintenance.', details: 'Ensures safe braking performance.', price: '$50', image: brakeservice },
-  { title: 'AC Service', description: 'AC system check and recharge.', details: 'Keeps your car cool and comfortable.', price: '$45', image: acservice },
-  { title: 'Battery Service', description: 'Battery check and replacement.', details: 'Ensures reliable starting power.', price: '$60', image: batteryservice },
-  { title: 'Inspection Service', description: 'Comprehensive vehicle inspection.', details: 'Identifies potential issues early.', price: '$55', image: inspectionservice }
+  { title: 'Silver Wash', description: 'A quick, effective wash.', details: 'Basic exterior wash.', image: carwash1 },
+  { title: 'Gold Wash', description: 'Includes exterior wash and wheel cleaning.', details: 'Regular maintenance wash.', image: carwash2 },
+  { title: 'Platinum Wash', description: 'Full detailing and polish.', details: 'Comprehensive interior and exterior clean.', image: carwash3 },
+  { title: 'Intensive Internal Cleaning', description: 'Deep clean of interior.', details: 'Seats, mats, and interior surfaces.', image: carwash4 },
+  { title: 'Wax Rubbing and Buffing', description: 'Protective wax application.', details: 'Enhances shine and preserves paint.', image: carwash5 },
+  { title: 'Teflon Coating', description: 'Long-lasting paint protection.', details: 'Resistant to dirt and scratches.', image: carwash6 },
+  { title: 'Oil Change', description: 'Regular oil and filter change.', details: 'Keeps your engine running smoothly.', image: oilchange },
+  { title: 'Tire Service', description: 'Tire rotation and balancing.', details: 'Ensures even tire wear and smooth ride.',  image: tireservice },
+  { title: 'Brake Service', description: 'Brake inspection and maintenance.', details: 'Ensures safe braking performance.', image: brakeservice },
+  { title: 'AC Service', description: 'AC system check and recharge.', details: 'Keeps your car cool and comfortable.', image: acservice },
+  { title: 'Battery Service', description: 'Battery check and replacement.', details: 'Ensures reliable starting power.', image: batteryservice },
+  { title: 'Inspection Service', description: 'Comprehensive vehicle inspection.', details: 'Identifies potential issues early.', image: inspectionservice }
 ];
 
 export default CarService;

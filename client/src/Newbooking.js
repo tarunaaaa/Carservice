@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button, Container, Row, Col, Card } from "react-bootstrap";
 import { FaCar, FaUser, FaEnvelope, FaClock, FaStickyNote, FaStar, FaQuoteLeft, FaCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
- import CarFooter from "./Carfooter";
+import CarFooter from "./Carfooter";
 
 const CarBookingPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [carBrands, setCarBrands] = useState([]); // State to store car brands
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,6 +16,26 @@ const CarBookingPage = () => {
     timing: "",
     notes: "",
   });
+
+  // Fetch car brands from the API
+  useEffect(() => {
+    const fetchCarBrands = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/carbrand");
+        if (!response.ok) {
+          throw new Error("Failed to fetch car brands");
+        }
+        const data = await response.json();
+        setCarBrands(data.brands); // Assuming the API returns { brands: [...] }
+      } catch (error) {
+        console.error("Error fetching car brands:", error);
+        alert("Failed to load car brands. Please try again later.");
+      }
+    };
+
+    fetchCarBrands();
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -58,7 +79,7 @@ const CarBookingPage = () => {
     setIsSubmitting(false);
   };
 
-  // Inline styles
+  // Inline styles (unchanged)
   const styles = {
     bookingPage: {
       background: "linear-gradient(135deg, #f5f7fa, #c3cfe2)",
@@ -237,33 +258,29 @@ const CarBookingPage = () => {
               <h4 className="mb-3">Car Details</h4>
               <Row>
                 <Col md={6}>
-                <Form.Group className="mb-3">
-  <Form.Label><FaCar className="me-2" /> Car Brand</Form.Label>
-  <Form.Select 
-    name="carBrand" 
-    required 
-    style={styles.formControl}
-    value={formData.carBrand}
-    onChange={handleChange}
-  >
-    <option value="">Select Car Brand</option>
-    <option value="Toyota">Toyota</option>
-    <option value="Honda">Honda</option>
-    <option value="Ford">Ford</option>
-    <option value="BMW">BMW</option>
-    <option value="Mercedes">Mercedes</option>
-    <option value="Audi">Audi</option>
-    <option value="Hyundai">Hyundai</option>
-    <option value="Nissan">Nissan</option>
-  </Form.Select>
-</Form.Group>
-
+                  <Form.Group className="mb-3">
+                    <Form.Label><FaCar className="me-2" /> Car Brand</Form.Label>
+                    <Form.Select 
+                      name="carBrand" 
+                      required 
+                      style={styles.formControl}
+                      value={formData.carBrand}
+                      onChange={handleChange}
+                    >
+                      <option value="">Select Car Brand</option>
+                      {carBrands.map((brand, index) => (
+                        <option key={index} value={brand}>
+                          {brand}
+                        </option>
+                      ))}
+                    </Form.Select>
+                  </Form.Group>
                 </Col>
                 <Col md={6}>
                   <Form.Group className="mb-3">
                     <Form.Label>Car Type</Form.Label>
                     <Form.Select 
-                    name="carType" 
+                      name="carType" 
                       required 
                       style={styles.formControl}
                       value={formData.carType}
@@ -302,18 +319,17 @@ const CarBookingPage = () => {
                   </Form.Group>
                 </Col>
                 <Col md={6}>
-                <Form.Group className="mb-3">
-  <Form.Label><FaClock className="me-2" /> Timing Slot</Form.Label>
-  <Form.Control 
-    type="datetime-local" 
-    name="timing" 
-    required 
-    style={styles.formControl} 
-    value={formData.timing} 
-    onChange={handleChange} 
-  />
-</Form.Group>
-
+                  <Form.Group className="mb-3">
+                    <Form.Label><FaClock className="me-2" /> Timing Slot</Form.Label>
+                    <Form.Control 
+                      type="datetime-local" 
+                      name="timing" 
+                      required 
+                      style={styles.formControl} 
+                      value={formData.timing} 
+                      onChange={handleChange} 
+                    />
+                  </Form.Group>
                 </Col>
               </Row>
             </motion.div>
@@ -372,7 +388,7 @@ const TarunaBooking = () => {
   return (
     <div>
       <CarBookingPage />
-       <CarFooter /> 
+      <CarFooter /> 
     </div>
   );
 };

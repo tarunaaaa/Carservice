@@ -36,6 +36,8 @@ router.post('/usercontactus', Ccarbooking.contactUs)
 router.get('/getalluserdata',Cusersignup.getuserdata)
 //api to delete user in admin panel
 router.delete('/deleteuser/:email',Cusersignup.deleteuser)
+//api to delete booking in admin panel
+router.delete('/deletebooking',Ccarbooking.deleteBooking)
 //api to get all booking details in admin pannel
 router.get('/getallbooking',Ccarbooking.getAllBookings)
 //api to get contact us details
@@ -43,5 +45,5 @@ router.get('/getcontact',Ccarbooking.getAllContactSubmissions)
 //api for booking slot timing 
 // router.get('/getbookslot',Ccarbooking.getBookedSlots)
 // api for car brand
-router.post('/carbrand',booking.addCarBrandAndType)
+router.get('/carbrand',booking.getCarBrands)
 module.exports=router

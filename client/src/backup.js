@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Table, Spinner, Alert, Button } from 'react-bootstrap';
 import { FaIdCard, FaUser, FaEnvelope, FaCar, FaWrench, FaClock, FaStickyNote, FaCalendarAlt, FaTrash } from 'react-icons/fa'; 
-
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   useEffect(() => {
     fetch('http://localhost:8080/getallbooking')
       .then((response) => {
@@ -30,30 +28,35 @@ const Bookings = () => {
       });
   }, []);
 
-  const handleDeleteBooking = async (booking) => {
-    try {
-      const isConfirmed = window.confirm(`Are you sure you want to delete the booking for ${booking.email}?`);
-      if (!isConfirmed) return;
+ // Function to delete a booking
+const handleDeleteBooking = async (booking) => {
+  try {
+    // Confirm before deleting
+    const isConfirmed = window.confirm(`Are you sure you want to delete the booking for ${booking.email}?`);
+    if (!isConfirmed) return;
 
-      const response = await fetch(`http://localhost:8080/deletebooking`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: booking.email }),
-      });
+    // Send the DELETE request with email in the body
+    const response = await fetch(`http://localhost:8080/deletebooking`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: booking.email }),
+    });
 
-      if (!response.ok) {
-        throw new Error('Failed to delete booking');
-      }
-
-      setBookings(prevBookings => prevBookings.filter(b => b.email !== booking.email));
-      alert('Booking deleted successfully');
-    } catch (error) {
-      console.error('Error deleting booking:', error);
-      alert('Failed to delete booking');
+    if (!response.ok) {
+      throw new Error('Failed to delete booking');
     }
-  };
+
+    // Remove the deleted booking from the state
+    setBookings(prevBookings => prevBookings.filter(b => b.email !== booking.email));
+
+    alert('Booking deleted successfully');
+  } catch (error) {
+    console.error('Error deleting booking:', error);
+    alert('Failed to delete booking');
+  }
+};
 
   return (
     <Card className="dashboard-card shadow-sm">
@@ -70,7 +73,7 @@ const Bookings = () => {
         ) : bookings.length === 0 ? (
           <Alert variant="info">No bookings found.</Alert>
         ) : (
-          <div className="table-responsive-container">
+          <div className="table-container">
             <Table striped bordered hover responsive className="custom-table">
               <thead>
                 <tr>
@@ -151,54 +154,49 @@ const Bookings = () => {
 
 export default Bookings;
 
-// Custom CSS for the table with improved scrolling
+// Custom CSS for the table
 const customStyles = `
   .dashboard-card {
     border: none;
     border-radius: 10px;
     background: #ffffff;
     padding: 20px;
-    overflow: hidden;
   }
 
-  .table-responsive-container {
-    width: 100%;
+  .table-container {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
   }
 
   .custom-table {
     width: 100%;
-    min-width: 1200px;
+    min-width: 1200px; /* Ensure the table is wider than the container */
     border-collapse: separate;
     border-spacing: 0;
-    margin: 0;
   }
 
   .custom-table thead th {
-    position: sticky;
-    top: 0;
     background-color: #007bff;
     color: white;
     font-weight: 600;
     border: none;
     padding: 12px;
     text-align: center;
-    z-index: 10;
   }
 
   .custom-table tbody td {
     vertical-align: middle;
     padding: 12px;
     text-align: center;
-    background: white;
   }
 
-  .table-row:hover td {
+  .table-row:hover {
     background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
 
   .btn-danger {
@@ -206,7 +204,6 @@ const customStyles = `
     border: none;
     padding: 5px 10px;
     font-size: 14px;
-    white-space: nowrap;
   }
 
   .btn-danger:hover {
@@ -216,71 +213,42 @@ const customStyles = `
   /* Column Widths */
   .col-id {
     width: 5%;
-    min-width: 50px;
   }
 
   .col-name {
     width: 10%;
-    min-width: 120px;
   }
 
   .col-email {
     width: 15%;
-    min-width: 180px;
   }
 
   .col-car-brand {
     width: 10%;
-    min-width: 120px;
   }
 
   .col-car-type {
     width: 10%;
-    min-width: 120px;
   }
 
   .col-service-type {
     width: 10%;
-    min-width: 120px;
   }
 
   .col-timings {
     width: 10%;
-    min-width: 120px;
   }
 
   .col-notes {
     width: 15%;
-    min-width: 180px;
   }
 
   .col-created-at {
     width: 10%;
-    min-width: 150px;
   }
 
   .col-action {
     width: 5%;
-    min-width: 80px;
-  }
-
-  /* Scrollbar styling */
-  .table-responsive-container::-webkit-scrollbar {
-    height: 8px;
-  }
-
-  .table-responsive-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 0 0 10px 10px;
-  }
-
-  .table-responsive-container::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-  }
-
-  .table-responsive-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
   }
 `;
 

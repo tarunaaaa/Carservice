@@ -279,7 +279,55 @@ const sendBookingEmails = async (userEmail, bookingData) => {
     await transporter.sendMail(adminMailOptions);
 };
 
+const deleteBooking = async (req, res) => {
+    try {
+        const db = await databasefile.main();
+        const collection = db.collection('carBookings');
+
+        // Extract the email from the request parameters
+        const userEmail = req.body.email; // Assuming email is passed as a URL parameter
+
+        // Check if email is provided
+        if (!userEmail) {
+            return res.status(400).json({
+                status: 400,
+                error: 'User email is required',
+            });
+        }
+
+        // Validate email format (basic check)
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail)) {
+            return res.status(400).json({
+                status: 400,
+                error: 'Invalid email format',
+            });
+        }
+
+        // Delete all bookings for the given email
+        const deleteResult = await collection.deleteMany({ email: userEmail });
+
+        // Check if any bookings were found and deleted
+        if (deleteResult.deletedCount === 0) {
+            return res.status(404).json({
+                status: 404,
+                error: 'No bookings found for this email',
+            });
+        }
+
+        // Return success response
+        res.status(200).json({
+            status: 200,
+            message: `${deleteResult.deletedCount} booking(s) deleted successfully`,
+            data: deleteResult,
+        });
+    } catch (error) {
+        console.error('Error deleting booking:', error);
+        res.status(500).json({
+            status: 500,
+            error: 'Internal Server Error',
+        });
+    }
+};
 
 
-
-module.exports = { bookCarService, getBookingByEmail, contactUs, getAllBookings ,getAllContactSubmissions};
+module.exports = { bookCarService, getBookingByEmail, contactUs, getAllBookings ,getAllContactSubmissions,deleteBooking};
