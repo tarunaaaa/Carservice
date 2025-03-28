@@ -4,20 +4,21 @@ const app= express();
 const jwt = require('jsonwebtoken'); //import jsonwebtoken
 const jwtSecretKey= 'tarunabansal@7373'
 const indexrouter=require('./router/index')
-
+const dotenv=require("dotenv");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(express.urlencoded({extended: false}));
+dotenv.config();
 app.use(cors())
 app.set('view engine', 'ejs');
 app.use(cors());
 app.use(express.static("uploads")); 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, authorization");
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-  next();
-});
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, authorization");
+//   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+//   next();
+// });
 
 app.post("/createToken", (req, res) => {
     // Validate User Here

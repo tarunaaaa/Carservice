@@ -1,8 +1,11 @@
 const { MongoClient } = require('mongodb');
+require('dotenv').config();
+const url =  process.env.MONGO_URI;
 //const url = 'mongodb://localhost:27017';
-const url='mongodb+srv://taruna:Taruna123@cluster0.3wyu8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+// const url='mongodb+srv://taruna:Taruna123@cluster0.3wyu8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 const client = new MongoClient(url);
-const dbName = 'Carservice';
+//const dbName = 'Carservice';
+const dbName=process.env.DB_NAME;
 async function main() {
     // Use connect method to connect to the server
     await client.connect();
